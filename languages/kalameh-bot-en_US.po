@@ -1,0 +1,142 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kalameh Telegram Bot 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 12:00+0000\n"
+"PO-Revision-Date: 2024-01-01 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Kalameh Bot Settings"
+msgstr "Kalameh Bot Settings"
+
+msgid "Kalameh Bot"
+msgstr "Kalameh Bot"
+
+msgid "Main Settings"
+msgstr "Main Settings"
+
+msgid "Settings for automatic article sending to Telegram channel"
+msgstr "Settings for automatic article sending to Telegram channel"
+
+msgid "Telegram Bot Token"
+msgstr "Telegram Bot Token"
+
+msgid "Enter your Telegram bot token (example: 123456789:ABCdefGHIjklMNOpqrsTUVwxyz)"
+msgstr "Enter your Telegram bot token (example: 123456789:ABCdefGHIjklMNOpqrsTUVwxyz)"
+
+msgid "Channel ID"
+msgstr "Channel ID"
+
+msgid "Telegram channel ID (example: @mychannel or -1001234567890)"
+msgstr "Telegram channel ID (example: @mychannel or -1001234567890)"
+
+msgid "Google Apps Script URL"
+msgstr "Google Apps Script URL"
+
+msgid "Google Apps Script URL that we will create next"
+msgstr "Google Apps Script URL that we will create next"
+
+msgid "Message Template"
+msgstr "Message Template"
+
+msgid "Customize the message format using shortcodes"
+msgstr "Customize the message format using shortcodes"
+
+msgid "Available shortcodes: {title}, {excerpt}, {link}, {categories}, {tags}, {author}, {date}"
+msgstr "Available shortcodes: {title}, {excerpt}, {link}, {categories}, {tags}, {author}, {date}"
+
+msgid "Template Preview:"
+msgstr "Template Preview:"
+
+msgid "Enable Auto Send"
+msgstr "Enable Auto Send"
+
+msgid "Enable automatic sending of new articles"
+msgstr "Enable automatic sending of new articles"
+
+msgid "Max Description Length"
+msgstr "Max Description Length"
+
+msgid "Maximum characters for short description"
+msgstr "Maximum characters for short description"
+
+msgid "Include Featured Image"
+msgstr "Include Featured Image"
+
+msgid "Include featured image in message"
+msgstr "Include featured image in message"
+
+msgid "Include Categories"
+msgstr "Include Categories"
+
+msgid "Include article categories"
+msgstr "Include article categories"
+
+msgid "Include Tags"
+msgstr "Include Tags"
+
+msgid "Include article tags"
+msgstr "Include article tags"
+
+msgid "Save Settings"
+msgstr "Save Settings"
+
+msgid "Connection Test"
+msgstr "Connection Test"
+
+msgid "To test connection to Telegram, click the button below:"
+msgstr "To test connection to Telegram, click the button below:"
+
+msgid "Test Connection"
+msgstr "Test Connection"
+
+msgid "Google Apps Script Guide"
+msgstr "Google Apps Script Guide"
+
+msgid "To use this plugin, you need to create a Google Apps Script:"
+msgstr "To use this plugin, you need to create a Google Apps Script:"
+
+msgid "Go to"
+msgstr "Go to"
+
+msgid "Create a new project"
+msgstr "Create a new project"
+
+msgid "Copy the following code into Code.gs file:"
+msgstr "Copy the following code into Code.gs file:"
+
+msgid "After saving the code, click \"Deploy\" and select \"New deployment\". Then copy the URL to the \"Google Apps Script URL\" field."
+msgstr "After saving the code, click \"Deploy\" and select \"New deployment\". Then copy the URL to the \"Google Apps Script URL\" field."
+
+msgid "Please complete all settings first."
+msgstr "Please complete all settings first."
+
+msgid "Kalameh Bot connection test"
+msgstr "Kalameh Bot connection test"
+
+msgid "Connection error:"
+msgstr "Connection error:"
+
+msgid "Connection established successfully! Test message sent."
+msgstr "Connection established successfully! Test message sent."
+
+msgid "Unknown error"
+msgstr "Unknown error"
+
+msgid "Message sending error:"
+msgstr "Message sending error:"
+
+msgid "Read Article"
+msgstr "Read Article"
+
+msgid "Categories:"
+msgstr "Categories:"
+
+msgid "Tags:"
+msgstr "Tags:" 
