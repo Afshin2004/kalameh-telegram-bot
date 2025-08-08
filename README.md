@@ -293,7 +293,6 @@ define('WP_DEBUG_LOG', true);
 
 - **Author**: Afshin Moradzadeh
 - **LinkedIn**: [Afshin Moradzadeh](https://www.linkedin.com/in/afshinmoradzadeh)
-- **Plugin URI**: [GitHub Repository](https://github.com/your-repo/kalameh-bot)
 
 ## 📄 License
 
