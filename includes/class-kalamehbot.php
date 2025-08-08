@@ -67,7 +67,11 @@ class KalamehBot {
             'google_script' => __('3. Google Apps Script:', 'kalameh-bot'),
             'google_script_desc' => __('Copy sample code to Google Apps Script.', 'kalameh-bot'),
             'test_settings' => __('4. Test:', 'kalameh-bot'),
-            'test_settings_desc' => __('Use "Test Connection" button to verify settings.', 'kalameh-bot')
+            'test_settings_desc' => __('Use "Test Connection" button to verify settings.', 'kalameh-bot'),
+            'resetting' => __('Resetting...', 'kalameh-bot'),
+            'reset_publish_status' => __('Reset All Publish Status', 'kalameh-bot'),
+            'resetting_status' => __('Resetting publish status...', 'kalameh-bot'),
+            'nonce' => wp_create_nonce('kalameh_bot_nonce')
         ));
     }
     

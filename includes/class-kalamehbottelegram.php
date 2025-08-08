@@ -154,6 +154,26 @@ class KalamehBotTelegram {
         if ($post->post_status !== 'publish') {
             return;
         }
+
+        // Check if this is the first time this post is being published
+        // Get the previous post status from post revision or check if post was previously published
+        $previous_status = get_post_meta($post_id, '_kalameh_bot_previous_status', true);
+        $was_published_before = get_post_meta($post_id, '_kalameh_bot_published_before', true);
+        
+        // If post was published before, don't send again
+        if ($was_published_before === 'yes') {
+            return;
+        }
+        
+        // Check if this is a status change from draft/pending to publish
+        if ($previous_status && $previous_status === 'publish') {
+            return;
+        }
+        
+        // Mark this post as published for future reference
+        update_post_meta($post_id, '_kalameh_bot_published_before', 'yes');
+        update_post_meta($post_id, '_kalameh_bot_previous_status', 'publish');
+        
         
         // Prepare message data
         $message_data = $this->prepare_message_data($post);
@@ -847,7 +867,7 @@ class KalamehBotTelegram {
             if (!empty($post_tags)) {
                 $tag_names = array();
                 foreach ($post_tags as $tag) {
-                $tag_names[] = '#' . $tag->name;
+                $tag_names[] = '#' . str_replace(' ', '_', $tag->name);
             }
             $tags = implode(', ', $tag_names);
         }

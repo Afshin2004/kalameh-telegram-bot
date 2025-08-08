@@ -23,6 +23,64 @@ jQuery(document).ready(function ($) {
     toggleGoogleScriptField();
   });
 
+  // Reset publish status
+  $("#reset-publish-status").click(function () {
+    var button = $(this);
+    var resultDiv = $("#reset-status-result");
+
+    // Change button appearance
+    button
+      .prop("disabled", true)
+      .addClass("loading")
+      .text("🔄 " + kalameh_bot_i18n.resetting);
+
+    // Show resetting message
+    resultDiv.html(
+      '<div class="notice notice-info"><p>🔄 ' +
+        kalameh_bot_i18n.resetting_status +
+        "</p></div>"
+    );
+
+    // Send reset request
+    $.ajax({
+      url: ajaxurl,
+      type: "POST",
+      data: {
+        action: "reset_publish_status",
+        nonce: kalameh_bot_i18n.nonce,
+      },
+      success: function (response) {
+        if (response.success) {
+          resultDiv.html(
+            '<div class="notice notice-success"><p>✅ ' +
+              response.data +
+              "</p></div>"
+          );
+        } else {
+          resultDiv.html(
+            '<div class="notice notice-error"><p>❌ ' +
+              response.data +
+              "</p></div>"
+          );
+        }
+      },
+      error: function () {
+        resultDiv.html(
+          '<div class="notice notice-error"><p>❌ ' +
+            kalameh_bot_i18n.server_error +
+            "</p></div>"
+        );
+      },
+      complete: function () {
+        // Reset button appearance
+        button
+          .prop("disabled", false)
+          .removeClass("loading")
+          .text(kalameh_bot_i18n.reset_publish_status);
+      },
+    });
+  });
+
   // Test connection
   $("#test-connection").click(function () {
     var button = $(this);
@@ -75,7 +133,9 @@ jQuery(document).ready(function ($) {
     // Show testing message
     resultDiv.html(
       '<div class="notice notice-info"><p>🔄 ' +
-        (useGoogleScript ? "Testing Google Apps Script connection..." : "Testing direct Telegram connection...") +
+        (useGoogleScript
+          ? "Testing Google Apps Script connection..."
+          : "Testing direct Telegram connection...") +
         "</p></div>"
     );
 
@@ -85,7 +145,7 @@ jQuery(document).ready(function ($) {
       type: "POST",
       data: {
         action: "test_telegram_connection",
-        nonce: kalameh_bot_i18n.nonce
+        nonce: kalameh_bot_i18n.nonce,
       },
       success: function (response) {
         if (response.success) {
@@ -104,7 +164,7 @@ jQuery(document).ready(function ($) {
       },
       error: function (xhr, status, error) {
         var errorMessage = "Server error occurred.";
-        
+
         // Try to get more specific error information
         if (xhr.responseJSON && xhr.responseJSON.data) {
           errorMessage = xhr.responseJSON.data;
@@ -118,7 +178,7 @@ jQuery(document).ready(function ($) {
             errorMessage = "Connection failed. Please check your settings.";
           }
         }
-        
+
         resultDiv.html(
           '<div class="notice notice-error"><p>❌ ' +
             errorMessage +
